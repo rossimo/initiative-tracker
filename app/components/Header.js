@@ -15,8 +15,8 @@ class Header extends React.Component {
         return <thead>
             <tr>
                 <th onClick={this.handleSort.bind(this, 'characterName')}>Character Name</th>
-                <th onClick={this.handleSort.bind(this, 'initiative')}>Initiative</th>
-                <th onClick={this.handleSort.bind(this, 'health')}>Hit Points</th>
+                <th onClick={this.handleSort.bind(this, 'initiative')}>Dexterity</th>
+                <th onClick={this.handleSort.bind(this, 'roll')}>Roll</th>
                 <th>Remove</th>
             </tr>    
         </thead>

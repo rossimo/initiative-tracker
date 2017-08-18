@@ -7,7 +7,6 @@ require('../index.css');
 const initialState = {
     'initiative' : '',
     'characterName': '',
-    'health': '',
     'completed': ''
 }
 
@@ -17,7 +16,6 @@ class InputRow extends React.Component {
         this.state = {
             'initiative' : '',
             'characterName': '',
-            'health': '',
             'completed': ''
         }
 
@@ -27,7 +25,7 @@ class InputRow extends React.Component {
     }
 
     componentWillUpdate(nextProps, nextState) {
-        nextState.completed = !!(nextState.initiative && nextState.characterName && nextState.health);
+        nextState.completed = !!(nextState.initiative && nextState.characterName);
     }
 
     handleInputChange(event) {
@@ -49,8 +47,7 @@ class InputRow extends React.Component {
 
         this.props.onSubmit(
             this.state.initiative,
-            this.state.characterName,
-            this.state.health
+            this.state.characterName
         );
 
         this.reset();
@@ -73,29 +70,15 @@ class InputRow extends React.Component {
                         </p>
                     </div>
                 </div>
-                <div className="column is-2-desktop is-2-tablet is-6-mobile">
+                <div className="column is-4-desktop is-4-tablet is-6-mobile">
                     <div className="field">
                         <p className="control">
                             <input 
                                 name="initiative" 
                                 className="input" 
                                 type="number"
-                                placeholder="Initiative"
+                                placeholder="Dexterity"
                                 value={this.state.initiative} 
-                                onChange={this.handleInputChange}>
-                            </input>
-                        </p>
-                    </div>
-                </div>
-                <div className="column is-2-desktop is-2-tablet is-6-mobile">
-                    <div className="field">
-                        <p className="control">
-                            <input 
-                                name="health" 
-                                className="input" 
-                                type="number"
-                                placeholder="Health" 
-                                value={this.state.health}
                                 onChange={this.handleInputChange}>
                             </input>
                         </p>
